@@ -8,21 +8,14 @@ router.use(express.json());
 router.use(cors());
 
 router.put("/update/:id", async(req,res)=>{
-    const id = req.params.id;
-    const userList = new users({
-        newname: req.body.name,
+    
+    const result = await users.findOneAndUpdate({_id:req.params.id},{$set:{
+        name: req.body.name,
         email:req.body.email,
         phone:req.body.phone,
-        city:req.body.city,
-        })
-        try{
-           const result = await users.findOneAndUpdate(id,{$set:userList})
-            result.save();
-            res.json(result)
-        }
-        catch(err){
-          res.json({message: err.message});
-        }
+        city:req.body.city
+    }})
+     res.json(result);
     })
     
 module.exports = router;
