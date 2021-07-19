@@ -18,18 +18,9 @@ mongoose.connect("mongodb+srv://akshay:akshay@cluster0.viv8h.mongodb.net/webapp?
 app.use(require("./routes/insert"));
 app.use(require("./routes/read"));
 app.use(require(`./routes/update`));
-
-app.get("/view/:id" ,async (req,res)=>{
-    const id = req.params.id;
-    try{ const result = await users.findById(id);
-        res.send(result)
-    }
-    catch(err){
-        res.send({message: err.message})
-    }    
- })
+app.use(require(`./routes/view`));
  
-app.delete("/del/:id", async(req,res)=>{
+app.delete("/del/:id", async(req,res)=>{ //deleting user data using delete method 
     const id = req.params.id;
     await users.findByIdAndRemove(id);
     res.send("user Deleted");

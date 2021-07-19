@@ -7,14 +7,14 @@ import axios from "axios";
    const {id} = useParams();
    const {Listofusers,setListOfusers} = props
    useEffect(()=>{
-    axios.get("http://localhost:5000/read")
+    axios.get("http://localhost:5000/read") 
     .then(res =>{
         setListOfusers(res.data);
     })
     .catch(err=>{
-        console.log(err)
+        alert(err);
     })
-   },[setListOfusers])
+   },[setListOfusers]);
 
    const deleteUser=(id)=>{
      axios.delete(`http://localhost:5000/del/${id}`)
@@ -27,21 +27,30 @@ import axios from "axios";
    }
 
     return (
-        <div>
-            <div>
+        <div className="users">
+            <div className="navUser">
             <Link to="/add">AddUser</Link>
             </div>
+            <table>
+                  <tr>
+                    <th>Name</th>
+                    <th>Email</th> 
+                    <th>Phone</th>
+                    <th>City</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                  </tr>
          { Listofusers.map(val=>{
-               return <div key={val._id}>
-                    <p>{val.name}</p>
-                    <p>{val.email}</p>
-                    <p>{val.phone}</p>
-                    <p>{val.city}</p>
-                    <Link to={`edit/${val._id}`} >Edit</Link>
-                    <button onClick={()=>deleteUser(val._id)}>Delete</button>
-                </div>
+               return <tr key={val._id}>
+                    <td>{val.name}</td>
+                    <td>{val.email}</td>
+                    <td>{val.phone}</td>
+                    <td>{val.city}</td>
+                    <td><button className="edit"><Link to={`edit/${val._id}`} >Edit</Link></button></td>
+                    <td><button className="del" onClick={()=>deleteUser(val._id)}>Delete</button></td>
+                </tr>    
            })}
-           
+            </table>
         </div>
     )
 }

@@ -6,7 +6,7 @@ const cors = require("cors");
 router.use(cors());
 router.use(express.json());
 
-router.post("/insert",  (req, res) =>{
+router.post("/insert",  (req, res) =>{   //inserting user data using post method
     const userList = new users({
         name: req.body.name,
         email:req.body.email,

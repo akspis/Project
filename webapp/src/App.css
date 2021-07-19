@@ -1,17 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
 body{
   margin:0;
   padding: 0;
+  display: flex;
+  justify-content: center;
 }
 .App{
-  text-align: center;
-}
-.user{
+  font-family: 'Roboto Slab', serif;
+  margin-top: 2rem;
   display: flex;
   flex-direction: column;
+  text-align: center;
+  background-color: #F5F5F5;
+  min-height:90vh;
+  width: 800px;
+  border-radius: 0.5rem;
+  box-shadow: 10px 10px 5px  10px grey;;
 }
-table, th, td {
-  width: auto;
-  border: 1px solid black;
+/* userlist page */
+.navigation{
+  height: 15vh;
+  width:800px;
+  background: #4682B4;
+  border-radius: 0.5rem;
+}
+.navUser{
+  font-family: 'Roboto Slab', serif;
+  font-size: x-large;
+  margin: 1rem;
+  height: 5vh;
+  width: 10vw;
+  background-color: #2E8B57;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  border-radius: 1rem;
+  box-shadow: 0 9px #999;
+ }
+ .navUser:hover{
+   background-color: #98FB98;
+ }
+ .navUser:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+ .users table{
   border-collapse: collapse;
+  width: 100%;
+ }
+ th, td {
+  text-align: left;
+  padding: 8px;
+}
+tr:nth-child(even) {
+  background-color: #e5e5ee;
+}
+.users table button{
+  height: 5vh;
+  width: 5vw;
+  border-radius: 0.5rem;
+  outline: none;
+}
+.edit {
+  background-color: #DB7093;
+}
+.edit a {
+  color: white;
+}
+
+.del {
+  background-color: #FF6347;
+  color: #fff;
+}
+
+/* desinging adduser page */
+.AddUser{
+  font-family: 'Roboto Slab', serif;
+  margin-top: 5rem;
+  justify-content: center;
+}
+.AddUser form input{
+font-family: 'Roboto Slab', serif;
+height: 5vh;
+width: 50vw;
+border-radius: 00.5rem;
+background-color: #e5e5e5;
+padding: 0.5rem;
+margin-top: 1rem;
+text-align: center;
+font-size: x-large;
+outline: none;
+}
+.AddUser form input:hover{
+  background: #fff;
+}
+.AddUser form button{
+  font-family: 'Roboto Slab', serif;
+  margin-top: 2rem;
+  height: 10vh;
+  width: 10vw;
+  border-radius: 0.5rem;
+  outline: none;
+  background-color: #1E90FF;
+  font-size: x-large;
+  cursor: pointer;
+}
+.AddUser form button:hover{
+  background-color: #00BFFF;
+  color: #fff;
+}
+
+/* desining edit page */
+.EditUser form input{
+  font-family: 'Roboto Slab', serif;
+  height: 5vh;
+  width: 50vw;
+  border-radius: 00.5rem;
+  background-color: #e5e5e5;
+  padding: 0.5rem;
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: x-large;
+  outline: none;
+  }
+  .EditUser form input:hover{
+    background: #fff;
+  }
+  .EditUser form button{
+    font-family: 'Roboto Slab', serif;
+    margin-top: 2rem;
+    height: 10vh;
+    width: 10vw;
+    border-radius: 0.5rem;
+    outline: none;
+    background-color: #CD5C5C;
+    font-size: x-large;
+    cursor: pointer;
+  }
+  .EditUser form button:hover{
+    background-color: #F08080;
+    color: #fff;
+  }
+  
+ .link{
+  font-family: 'Roboto Slab', serif;
+  font-size: x-large;
+  margin: 1rem;
+  height: 5vh;
+  width: 10vw;
+  background-color: #2E8B57;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  border-radius: 0.5rem;
+  box-shadow: 0 9px #999;;
+ }
+ .link:hover{
+   background-color: #90EE90;;
+ }
+ .link:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+a{
+  text-decoration: none !important;
 }
 
