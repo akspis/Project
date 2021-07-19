@@ -1,0 +1,17 @@
+body{
+  margin:0;
+  padding: 0;
+}
+.App{
+  text-align: center;
+}
+.user{
+  display: flex;
+  flex-direction: column;
+}
+table, th, td {
+  width: auto;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
