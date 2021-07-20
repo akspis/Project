@@ -49,7 +49,7 @@ import axios from "axios";
            
             <input type="text" name="email" onChange={changeViewData} value={user.email} placeholder="Enter email.."/><br />
            
-            <input type="text" name="phone" onChange={changeViewData} value={user.phone} placeholder="Enter Phone.."/><br />
+            <input type="number" name="phone" onChange={changeViewData} value={user.phone} placeholder="Enter Phone.."/><br />
             
             <input type="text" name="city" onChange={changeViewData} value={user.city} placeholder="Enter city.."/><br />
             <button onClick={()=>updateUserData()}>Update</button>

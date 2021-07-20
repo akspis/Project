@@ -33,7 +33,7 @@ import axios from "axios";
            
             <input type="text" name="email" onChange={changeData}  placeholder="Enter Email" required/><br />
             
-            <input type="text" name="phone" onChange={changeData}  placeholder="Enter Phone" required/><br />
+            <input type="number" name="phone" onChange={changeData}  placeholder="Enter Phone" required/><br />
             
             <input type="text" name="city" onChange={changeData}  placeholder="Enter City" required/><br />
             <button onClick={AddUserData}>AddUser</button>
