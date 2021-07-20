@@ -4,6 +4,7 @@ body{
   padding: 0;
   display: flex;
   justify-content: center;
+  background:linear-gradient(to right,rgba(219, 234, 254), rgba(196, 181, 253));
 }
 .App{
   font-family: 'Roboto Slab', serif;
@@ -63,10 +64,10 @@ tr:nth-child(even) {
   outline: none;
 }
 .edit {
-  background-color: #DB7093;
+  background-color: rgba(252, 211, 77);
 }
 .edit a {
-  color: white;
+  color: black;
 }
 
 .del {

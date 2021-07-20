@@ -1,15 +1,14 @@
 import React,{useEffect} from 'react'
-import {Link ,useParams} from "react-router-dom";
+import {Link} from "react-router-dom";
 import "../App.css";
 import axios from "axios";
 
  function UserList(props) {
-   const {id} = useParams();
    const {Listofusers,setListOfusers} = props
    useEffect(()=>{
     axios.get("http://localhost:5000/read") 
     .then(res =>{
-        setListOfusers(res.data);
+        setListOfusers(res.data.reverse());
     })
     .catch(err=>{
         alert(err);

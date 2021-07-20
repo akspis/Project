@@ -1,6 +1,6 @@
 import {useState , useEffect} from "react"
 import "../App.css";
-import {Link , useParams, useHistory} from "react-router-dom";
+import {Link , useParams} from "react-router-dom";
 import axios from "axios";
 
  function EditUser() {
@@ -19,7 +19,10 @@ import axios from "axios";
         phone:user.phone,
         city:user.city,
         }
-        await axios.put(`http://localhost:5000/update/${id}`, newupdatedUser);   
+        await axios.put(`http://localhost:5000/update/${id}`, newupdatedUser)
+        .then(()=>{
+            alert("data updated succesfully");
+        })  
        
        }
    

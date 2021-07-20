@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import "../App.css";
-import {Link, useHistory} from "react-router-dom";
+import {useHistory} from "react-router-dom";
 import axios from "axios";
 
  function Adduser() {
@@ -18,25 +18,24 @@ import axios from "axios";
         phone:user.phone,
         city:user.city,
         }
-       axios.post("http://localhost:5000/insert",newUser);
-       history.push('/'); 
+     axios.post("http://localhost:5000/insert",newUser)
+      history.push('/')
        }  
    
 
    const changeData =(e)=>{
        setuser({...user,[e.target.name]: e.target.value});
    }
-
     return (
         <div className="AddUser">
         <form >
-            <input type="text" name="name" onChange={changeData}  placeholder="Enter Name"/><br/>
+            <input type="text" name="name" onChange={changeData}  placeholder="Enter Name" required/><br/>
            
-            <input type="text" name="email" onChange={changeData}  placeholder="Enter Email" /><br />
+            <input type="text" name="email" onChange={changeData}  placeholder="Enter Email" required/><br />
             
-            <input type="text" name="phone" onChange={changeData}  placeholder="Enter Phone"/><br />
+            <input type="text" name="phone" onChange={changeData}  placeholder="Enter Phone" required/><br />
             
-            <input type="text" name="city" onChange={changeData}  placeholder="Enter City"/><br />
+            <input type="text" name="city" onChange={changeData}  placeholder="Enter City" required/><br />
             <button onClick={AddUserData}>AddUser</button>
         </form>
         </div>
