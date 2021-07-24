@@ -4,7 +4,7 @@ body{
   padding: 0;
   display: flex;
   justify-content: center;
-  background:linear-gradient(to right,rgba(219, 234, 254), rgba(196, 181, 253));
+  background:linear-gradient(to right,rgba(251, 207, 232), rgba(196, 181, 253));
 }
 .App{
   font-family: 'Roboto Slab', serif;
@@ -32,7 +32,7 @@ body{
   margin: 1rem;
   height: 5vh;
   width: 10vw;
-  background-color: #2E8B57;
+  background-color:#98FB98;
   color: white;
   padding: 14px 25px;
   text-align: center;
@@ -40,7 +40,7 @@ body{
   box-shadow: 0 9px #999;
  }
  .navUser:hover{
-   background-color: #98FB98;
+   background-color:#2E8B57;
  }
  .navUser:active {
   background-color: #3e8e41;
@@ -57,6 +57,9 @@ body{
   text-align: left;
   padding: 8px;
 }
+th{
+  font-size: larger;
+}
 tr:nth-child(even) {
   background-color: #e5e5ee;
 }
@@ -71,6 +74,9 @@ tr:nth-child(even) {
 .edit {
   background-color: rgba(252, 211, 77);
 }
+.edit:hover{
+  background-color: yellow;
+}
 .edit a {
   font-family: 'Roboto Slab', serif;
   font-weight: bolder;
@@ -82,6 +88,11 @@ tr:nth-child(even) {
   font-weight: bolder;
   background-color: #FF6347;
   color: #fff;
+  cursor: pointer;
+}
+.del:hover{
+  background-color: red;
+  color: black;
 }
 
 /* desinging adduser page */
@@ -109,7 +120,7 @@ outline: none;
   font-family: 'Roboto Slab', serif;
   margin-top: 2rem;
   height: 10vh;
-  width: 10vw;
+  width: 20vw;
   border-radius: 0.5rem;
   outline: none;
   background-color: #1E90FF;
@@ -141,15 +152,15 @@ outline: none;
     font-family: 'Roboto Slab', serif;
     margin-top: 2rem;
     height: 10vh;
-    width: 10vw;
+    width: 20vw;
     border-radius: 0.5rem;
     outline: none;
-    background-color: #CD5C5C;
+    background-color: #F08080;
     font-size: x-large;
     cursor: pointer;
   }
   .EditUser form button:hover{
-    background-color: #F08080;
+    background-color: #CD5C5C;
     color: #fff;
   }
   
@@ -160,15 +171,16 @@ outline: none;
   margin: 1rem;
   height: 5vh;
   width: 10vw;
-  background-color: #2E8B57;
+  background-color: #90EE90;
   color: white;
   padding: 14px 25px;
   text-align: center;
   border-radius: 0.5rem;
   box-shadow: 0 9px #999;;
+  
  }
  .link:hover{
-   background-color: #90EE90;;
+   background-color: #2E8B57;
  }
  .link:active {
   background-color: #3e8e41;
@@ -178,4 +190,6 @@ outline: none;
 a{
   text-decoration: none !important;
 }
+.EditLink{
 
+}

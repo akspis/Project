@@ -1,9 +1,10 @@
 import {useState , useEffect} from "react"
 import "../App.css";
-import {Link , useParams} from "react-router-dom";
+import {Link , useParams, useHistory} from "react-router-dom";
 import axios from "axios";
 
  function EditUser() {
+     const history = useHistory()
     const {id} = useParams();
     const [user, setUser] = useState({
         name:"",
@@ -12,7 +13,8 @@ import axios from "axios";
         city:""
       });
    
-   const updateUserData = async()=>{
+   const updateUserData = async(e)=>{
+       e.preventDefault();
        const newupdatedUser = {
         name: user.name,
         email:user.email,
@@ -21,11 +23,9 @@ import axios from "axios";
         }
         await axios.put(`http://localhost:5000/update/${id}`, newupdatedUser)
         .then(()=>{
-            alert("data updated succesfully");
-        })  
-       
-       }
-   
+            history.push("/");
+        })}
+
     const loadUser=async()=>{
            const result = await axios.get(`http://localhost:5000/view/${id}`);
            setUser(result.data);  
@@ -52,7 +52,7 @@ import axios from "axios";
             <input type="number" name="phone" onChange={changeViewData} value={user.phone} placeholder="Enter Phone.."/><br />
             
             <input type="text" name="city" onChange={changeViewData} value={user.city} placeholder="Enter city.."/><br />
-            <button onClick={()=>updateUserData()}>Update</button>
+            <button onClick={updateUserData}>Update</button>
         </form>
         </div>
     )

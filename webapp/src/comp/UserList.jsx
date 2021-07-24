@@ -5,6 +5,7 @@ import axios from "axios";
 
  function UserList(props) {
    const {Listofusers,setListOfusers} = props
+   
    useEffect(()=>{
     axios.get("http://localhost:5000/read") 
     .then(res =>{
@@ -16,15 +17,13 @@ import axios from "axios";
    },[setListOfusers]);
 
    const deleteUser=(id)=>{
-     axios.delete(`http://localhost:5000/del/${id}`)
+     axios.delete(`http://localhost:5000/delete/${id}`)
      .then(()=>{
          setListOfusers(Listofusers.filter(val =>{
              return val._id !== id;
          }))
      })
-
    }
-
     return (
         <div className="users">
             <div className="navUser">

@@ -3,7 +3,6 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const users = require("./models/index")
 
-
 const app = express()
 
 const Port = process.env.Port || 5000;
@@ -19,13 +18,8 @@ app.use(require("./routes/insert"));
 app.use(require("./routes/read"));
 app.use(require(`./routes/update`));
 app.use(require(`./routes/view`));
- 
-app.delete("/del/:id", async(req,res)=>{ //deleting user data using delete method 
-    const id = req.params.id;
-    await users.findByIdAndRemove(id);
-    res.send("user Deleted");
-    }
-)
+app.use(require('./routes/delete')); 
+
 app.listen(Port, ()=>{
     console.log("Port is running on " + Port);
 })

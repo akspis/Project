@@ -1,0 +1,19 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "To stard A React fronted inside the webapp Install `npm install` it will install `node_modules` And dependencies on Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akspis/Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akspis/Project/issues"
+  },
+  "homepage": "https://github.com/akspis/Project#readme"
+}

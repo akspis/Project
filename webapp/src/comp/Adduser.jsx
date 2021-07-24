@@ -1,17 +1,19 @@
 import React,{useState} from 'react'
 import "../App.css";
-import {useHistory} from "react-router-dom";
+import {useHistory,Link} from "react-router-dom";
 import axios from "axios";
 
  function Adduser() {
+    const history = useHistory();
     const [user, setuser] = useState({
         name:"",
         email:"",
         phone:"",
         city:""
       });
-   const history = useHistory();
-   const AddUserData = ()=>{
+
+   const AddUserData = (e)=>{
+       e.preventDefault();
        const newUser = {
         name: user.name,
         email:user.email,
@@ -19,16 +21,16 @@ import axios from "axios";
         city:user.city,
         }
      axios.post("http://localhost:5000/insert",newUser)
-      history.push('/')
+       history.push("/")
        }  
    
-
    const changeData =(e)=>{
        setuser({...user,[e.target.name]: e.target.value});
    }
     return (
         <div className="AddUser">
-        <form >
+            
+        <form>
             <input type="text" name="name" onChange={changeData}  placeholder="Enter Name" required/><br/>
            
             <input type="text" name="email" onChange={changeData}  placeholder="Enter Email" required/><br />
