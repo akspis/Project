@@ -12,7 +12,8 @@ import axios from "axios";
         city:""
       });
 
-   const AddUserData = (e)=>{
+   const AddUserData = async(e)=>{
+       try{
        e.preventDefault();
        const newUser = {
         name: user.name,
@@ -20,9 +21,12 @@ import axios from "axios";
         phone:user.phone,
         city:user.city,
         }
-     axios.post("http://localhost:5000/insert",newUser)
-       history.push("/")
-       }  
+    await axios.post("http://localhost:5000/insert",newUser)
+       history.push("/")    
+   }catch(err){
+       console.log(err)
+   }
+}  
    
    const changeData =(e)=>{
        setuser({...user,[e.target.name]: e.target.value});

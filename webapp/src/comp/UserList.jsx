@@ -16,14 +16,20 @@ import axios from "axios";
     })
    },[setListOfusers]);
 
-   const deleteUser=(id)=>{
+   const deleteUser=async(id)=>{
+    try{
      axios.delete(`http://localhost:5000/delete/${id}`)
      .then(()=>{
          setListOfusers(Listofusers.filter(val =>{
              return val._id !== id;
          }))
      })
+    }
+    catch(err){
+        console.log(err)
+    }
    }
+
     return (
         <div className="users">
             <div className="navUser">

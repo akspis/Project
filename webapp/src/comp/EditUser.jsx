@@ -14,17 +14,23 @@ import axios from "axios";
       });
    
    const updateUserData = async(e)=>{
-       e.preventDefault();
-       const newupdatedUser = {
-        name: user.name,
-        email:user.email,
-        phone:user.phone,
-        city:user.city,
-        }
-        await axios.put(`http://localhost:5000/update/${id}`, newupdatedUser)
-        .then(()=>{
-            history.push("/");
-        })}
+       try{
+        e.preventDefault();
+        const newupdatedUser = {
+         name: user.name,
+         email:user.email,
+         phone:user.phone,
+         city:user.city,
+         }
+         await axios.put(`http://localhost:5000/update/${id}`, newupdatedUser)
+         .then(()=>{
+             history.push("/");
+         })
+       }
+       catch(err){
+         console.log(err)
+       }
+      }
 
     const loadUser=async()=>{
            const result = await axios.get(`http://localhost:5000/view/${id}`);
